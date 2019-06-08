@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	[SerializeField] private Rigidbody rb;
+	[SerializeField] private Rigidbody rb ;
 	[SerializeField] private float ForwardForce = 300f;
 	[SerializeField] private float JumpStrength = 5f;
-	[SerializeField] private Collider _collider;
 	[SerializeField] private float moveRIGHT_AND_LEFTspeed = 10f;
 	[SerializeField] private bool RightButtonPressed = false;
 	[SerializeField] private bool LeftButtonPressed = false;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+	[SerializeField] private Vector3 TouchBeginPos, TouchEndPos;
+	[SerializeField] private Swipe swipeControls;
 
 	void FixedUpdate()
 	{
@@ -29,15 +19,17 @@ public class PlayerMovement : MonoBehaviour
 		rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
 
 		// Move Right
-		if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 2f && transform.position.y <= -0.299940f)
+
+		if (swipeControls.SwipeRight && transform.position.x < 2f && transform.position.y <= -0.299940f)
 		{
 			RightButtonPressed = true;
 		}
 
 		MoveRight();
-		
+
 		// Move Left
-		if (Input.GetKeyDown(KeyCode.A) && transform.position.x > -2f && transform.position.y <= -0.299940f)
+
+		if (swipeControls.SwipeLeft && transform.position.x > -2f && transform.position.y <= -0.299940f)
 		{
 			LeftButtonPressed = true;
 		}
@@ -46,11 +38,14 @@ public class PlayerMovement : MonoBehaviour
 
 		// Jump
 
-		if (Input.GetKeyDown(KeyCode.Space) && transform.position.y <= -0.299940f)
+		if ( swipeControls.SwipeUp && transform.position.y <= -0.299940f)
 		{
 			rb.AddForce(0, JumpStrength * Time.deltaTime, 0);
 
 		}
+
+
+	    // Disable Movement
 
 		if (transform.position.x >= 2f)
 		{
@@ -79,7 +74,4 @@ public class PlayerMovement : MonoBehaviour
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(-2f, transform.position.y, transform.position.z), moveRIGHT_AND_LEFTspeed * Time.deltaTime);
 		}
 	}
-
-
 }
-

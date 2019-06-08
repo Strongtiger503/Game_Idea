@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 86661151}
   - component: {fileID: 86661155}
   - component: {fileID: 86661150}
+  - component: {fileID: 86661156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -242,12 +243,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 86661150}
-  ForwardForce: 500
+  ForwardForce: 200
   JumpStrength: 12000
-  _collider: {fileID: 0}
   moveRIGHT_AND_LEFTspeed: 5
   RightButtonPressed: 0
   LeftButtonPressed: 0
+  TouchBeginPos: {x: 0, y: 0, z: 0}
+  TouchEndPos: {x: 0, y: 0, z: 0}
+  swipeControls: {fileID: 86661156}
+--- !u!114 &86661156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86661149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444d063417ea9704b87d5d61d11ed870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579918979
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +427,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.3e-44, y: 0, z: 1, w: 0}
+  m_BoundingSphereOverride: {x: -0.03515625, y: 0, z: 6, w: 6}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
