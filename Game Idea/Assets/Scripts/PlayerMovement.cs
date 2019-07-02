@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private Rigidbody rb;
 	[SerializeField] private float ForwardForce = 300f;
 	[SerializeField] private float JumpStrength = 5f;
-	[SerializeField] private Collider _collider;
 	[SerializeField] private float moveRIGHT_AND_LEFTspeed = 10f;
 	[SerializeField] private bool RightButtonPressed = false;
 	[SerializeField] private bool LeftButtonPressed = false;
