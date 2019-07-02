@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+	//intialize variables
+
 	[SerializeField] private Rigidbody rb;
 	[SerializeField] private float ForwardForce = 300f;
 	[SerializeField] private float JumpStrength = 5f;
@@ -51,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
 		}
 
+		//Stop Movement
+
 		if (transform.position.x >= 2f)
 		{
 			RightButtonPressed = false;
@@ -63,12 +68,14 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
+	//functions / methods
+
 	private void MoveRight()
 	{
 		if (RightButtonPressed == true)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(2f, transform.position.y, transform.position.z), moveRIGHT_AND_LEFTspeed * Time.deltaTime);
-		}
+		} 
 	}
 
 	private void MoveLeft()
