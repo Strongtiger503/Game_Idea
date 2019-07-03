@@ -62,10 +62,13 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		
 		//Stop Movement
 
+=======
+>>>>>>> parent of d20d5f6... Revert "Revert "version 1.1""
 =======
 >>>>>>> parent of d20d5f6... Revert "Revert "version 1.1""
 		if (transform.position.x >= 2f)
