@@ -7,6 +7,8 @@ public class MovementTemp : MonoBehaviour
 
 	public SwipeAndTapForMobileAndStandalone Swipe;
 
+	public Transform transform;
+
 	private void Update()
 	{
 		if (Swipe.Tap)
@@ -16,22 +18,22 @@ public class MovementTemp : MonoBehaviour
 
 		if (Swipe.SwipeUp)
 		{
-			Debug.Log("swipe up");
+			transform.position += new Vector3(0f, 10f, 0f);
 		}
 
 		if (Swipe.SwipeDown)
 		{
-			Debug.Log("swipe down");
+			transform.position += new Vector3(0f, -10f, 0f);
 		}
 
 		if (Swipe.SwipeLeft)
 		{
-			Debug.Log("swipe left");
+			transform.position += new Vector3(-10f, 0f, 0f);
 		}
 
 		if (Swipe.SwipeRight)
 		{
-			Debug.Log("swipe right");
+			transform.position += new Vector3(10f, 0f, 0f);
 		}
 
 

@@ -28,7 +28,6 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
-			tap = true;
 			isDraging = true;
 			startTouch = Input.mousePosition;
 
@@ -51,7 +50,6 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 			if(Input.touches[0].phase == TouchPhase.Began)
 			{
 
-				tap = true;
 				isDraging = true;
 				startTouch = Input.touches[0].position;
 
@@ -81,7 +79,7 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 			{
 				swipeDelta = Input.touches[0].position - startTouch;
 			}
-			else if (Input.GetMouseButtonDown(0))
+			else if (Input.GetMouseButton(0))
 			{
 				swipeDelta = (Vector2)Input.mousePosition - startTouch;
 			}
@@ -91,7 +89,7 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 
 		#region If Deadzone was crossed do a swipe
 
-		if(swipeDelta.magnitude > 150)
+		if(swipeDelta.magnitude > 140)
 		{
 			//Direction of Swipe
 
@@ -109,12 +107,12 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 
 				if (x > 0)
 				{
-					swipeLeft = true;
+					swipeRight = true;
 				}
 
 			}
 
-			if (Mathf.Abs(x) > Mathf.Abs(y))
+			if (Mathf.Abs(x) < Mathf.Abs(y))
 			{
 				//Up or Down
 

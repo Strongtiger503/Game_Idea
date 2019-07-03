@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Swipe: {fileID: 1204481884}
+  transform: {fileID: 1204481889}
 --- !u!65 &1204481886
 BoxCollider:
   m_ObjectHideFlags: 0
