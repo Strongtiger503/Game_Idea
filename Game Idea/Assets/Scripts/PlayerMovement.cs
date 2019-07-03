@@ -30,15 +30,23 @@ public class PlayerMovement : MonoBehaviour
 		// auto Move Forward
 		rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
 
+		
+		
+		
 		// Move Right
+
 		if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 2f && transform.position.y <= -0.299940f)
 		{
 			RightButtonPressed = true;
 		}
 
 		MoveRight();
+
+		
+		
 		
 		// Move Left
+
 		if (Input.GetKeyDown(KeyCode.A) && transform.position.x > -2f && transform.position.y <= -0.299940f)
 		{
 			LeftButtonPressed = true;
@@ -46,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
 		MoveLeft();
 
+		
+		
 		// Jump
 
 		if (Input.GetKeyDown(KeyCode.Space) && transform.position.y <= -0.299940f)
@@ -54,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
 		}
 
+		
+		
 		//Stop Movement
 
 		if (transform.position.x >= 2f)
