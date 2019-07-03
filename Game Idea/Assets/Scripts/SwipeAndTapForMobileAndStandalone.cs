@@ -35,6 +35,11 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 		else if (Input.GetMouseButtonUp(0))
 		{
 
+			if (startTouch == (Vector2)Input.mousePosition)
+			{
+				tap = true;
+			}
+
 			isDraging = false;
 			Reset();
 
@@ -56,6 +61,10 @@ public class SwipeAndTapForMobileAndStandalone : MonoBehaviour
 			}
 			else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
 			{
+				if (startTouch == Input.touches[0].position)
+				{
+					tap = true;
+				}
 
 				isDraging = false;
 				Reset();
