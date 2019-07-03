@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 86661150}
   ForwardForce: 300
-  JumpStrength: 5
+  JumpStrength: 100
   moveRIGHT_AND_LEFTspeed: 10
   RightButtonPressed: 0
   LeftButtonPressed: 0
